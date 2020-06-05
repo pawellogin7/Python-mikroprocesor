@@ -1,0 +1,29 @@
+J.C. i P.L. program na mk
+-1 3 1008
+-1 3 1009
+1000 0 36
+-1 8 -1
+-1 4 1009
+-1 4 1008
+===$$$===
+Wyœwietl wolne miejsce na dysku
+Przerwanie: INT 21h
+Funkcja: 36h
+
+Parametry:
+AH = #36 - numer funkcji
+
+Dzia³anie:
+Funkcja ta zapisuje w rejestrze CX i DX iloœæ wolnego miejsca na dysku twardym w GB. Wartoœci zapisywane s¹ w nastêpuj¹cy sposób:
+BH - tysi¹ce i setki GB
+BL - dziesi¹tki i jednoœci GB
+czyli:
+Wolna pamiêæ = BH*100GB + BL*1GB
+
+B³êdy:
+Brak
+
+Przyk³ad:
+Za³ó¿my, ¿e posiadamy na dysku 578GB wolnego miejsca. W takim przypdaku, po wywo³aniu funkcji do rejestu BX zostan¹ zapisane wartoœci:
+BH = 5
+BL = 78

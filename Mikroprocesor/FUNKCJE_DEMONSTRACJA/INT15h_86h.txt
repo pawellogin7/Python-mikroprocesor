@@ -1,0 +1,42 @@
+J.C. i P.L. program na mk
+-1 3 1008
+-1 3 1010
+-1 3 1011
+1004 0 1
+1005 0 5
+1006 0 7
+1007 0 2
+1000 0 86
+-1 6 -1
+-1 4 1011
+-1 4 1010
+-1 4 1008
+===$$$===
+Czekaj (Wait)
+Przerwanie: INT 15h
+Funkcja: 86h
+
+Parametry:
+AH = #0 - numer funkcji
+CH - sekundy
+CL - setki ms
+DH - dziesi¹tki ms
+DL - mikrosekundy
+
+Dzia³anie:
+Program czeka okreœlon¹ iloœæ ms
+zapisan¹ w rejestrach CX i DX:
+Wati time[ms] = CH*1000ms +
++ CL*100ms + DH*10ms + DL*1ms
+
+B³êdy:
+Brak
+
+Przyk³ad(Program po lewej):
+Jeœli do rejestór CX i DX wpiszemy
+wartoœci:
+CH = 1
+CL = 5
+DH = 7
+DL = 2
+to program odczeka 1572ms po czym bêdzie kontynuowa³ pracê.

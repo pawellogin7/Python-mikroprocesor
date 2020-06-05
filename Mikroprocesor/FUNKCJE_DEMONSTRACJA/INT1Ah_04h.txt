@@ -1,0 +1,33 @@
+J.C. i P.L. program na mk
+-1 3 1008
+-1 3 1010
+-1 3 1011
+1000 0 4
+-1 9 -1
+-1 4 1011
+-1 4 1010
+-1 4 1008
+===$$$===
+Wyœwietl aktualn¹ datê
+Przerwanie: INT 1Ah
+Funkcja: 04h
+
+Parametry:
+AH = #04 - numer funkcji
+
+Dzia³anie:
+Funkcja ta zapisuje w rejestrze CX i DX datê odczytan¹ z kalendarza:
+CH - wiek
+CL - rok(w wieku)
+DH - miesi¹c
+DL - dzieñ
+
+B³êdy:
+Brak
+
+Przyk³ad:
+Za³ó¿my, ¿e wywo³ujemy funkcjê, dnia 04-20-2020. W takim wypadku do rejestrów CX i DX zostan¹ wpisane nastêpuj¹ce wartoœci:
+CH = 21
+CL = 20
+DH = 20
+DL = 4

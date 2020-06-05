@@ -1,0 +1,50 @@
+J.C. i P.L. program na mk
+-1 3 1008
+-1 3 1010
+-1 3 1011
+1004 0 7
+1005 0 50
+1006 0 3
+1007 0 45
+1000 0 2
+-1 5 -1
+-1 4 1011
+-1 4 1010
+-1 4 1008
+===$$$===
+Przesuniêcie kursora na wspó³rzêdne
+Przerwanie: INT 10h
+Funkcja: 02h
+
+Parametry:
+AH = #2 - numer funkcji
+CH - wspó³rzêdna x, tysi¹ce i setki
+CL - wspó³rzêdna x, dziesi¹tki i jednoœci
+DH - wspó³rzêdna Y, tysi¹ce i setki
+DL - wspó³rzêdna Y, dziesi¹tki i jednoœci
+
+Dzia³anie:
+Kursor zostaje przesuniêty na wsp.
+wpisane w rejestrze CX i DX.
+wspó³rzêdna x = CH*100 + CL
+wspó³rzêdna y = DH*100 + DL
+
+B³êdy:
+W przypadku wykroczenia wpisanych
+wartoœci poza mo¿liwosci ekranu funkcja
+zwróci b³¹d.
+
+Przyk³ad(Program po lewej):
+Po wpisaniu do rejestrów wartoœci:
+CH = 7
+CL = 50
+DH = 3
+DL = 45
+i wywo³aniu funkcji kursor muszki
+zostanie przeniesony na pozycjê:
+x = 7*100 + 50 = 750
+y = 3*100 + 45 = 345
+Jeœli jednak którakolwiek z tych
+wartoœci przekroczy³aby mo¿liwoœci
+ekranu komputera to funkcja zwróci
+b³¹d i program zatrzyma siê. 

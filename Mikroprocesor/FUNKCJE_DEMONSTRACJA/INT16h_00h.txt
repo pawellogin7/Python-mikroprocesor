@@ -1,0 +1,29 @@
+J.C. i P.L. program na mk
+-1 3 1008
+1000 0 0
+-1 7 -1
+-1 4 1008
+===$$$===
+Odczytaj znak
+Przerwanie: INT 16h
+Funkcja: 00h
+
+Parametry:
+AH = #0 - numer funkcji
+
+Dzia³anie:
+Funkcja odczytuje znak zapisany
+w buforze klawiatury. Jeœli ¿aden znak
+nie jest w nim dostêplny to program
+czeka a¿ u¿ytkownik kliknie na jakiœ znak na klawiaturze. Kod ASCII
+znaku zapisywany jest do rejestru
+AL, po czym bufor klawiatury jest
+czyszczony.
+
+B³êdy:
+Brak
+
+Przyk³ad(Program po lewej):
+Za³ó¿my, ¿e bufor klawiatury jest pusty. W takim wypadku program zacznie oczekiwaæ, a¿ u¿ytkownik naciœnie jakiœ przycisk na klawiaturze. Jeœli u¿ytkownik naciœnie znak 'a' to do rejestru AL zostanie wpisana wartoœæ tego znaku w kodzie ASCII, czyli:
+AL = 97
+Po tej operacji bufor klawiatury zostanie wyczysczony.

@@ -1,0 +1,40 @@
+J.C. i P.L. program na mk
+-1 3 1008
+-1 3 1010
+-1 3 1011
+1000 0 3
+-1 5 -1
+-1 4 1011
+-1 4 1010
+-1 4 1008
+===$$$===
+Odczytanie wspó³rzêdnych kursora
+Przerwanie: INT 10h
+Funkcja: 03h
+
+Parametry:
+AH = #3 - numer funkcji
+
+Dzia³anie:
+Pozycja kursora zostaje zapisana w
+rejestrach CX i DX:
+CH - wspó³rzêdna x, tysi¹ce i setki
+CL - wspó³rzêdna x, dziesi¹tki i jednoœci
+DH - wspó³rzêdna Y, tysi¹ce i setki
+DL - wspó³rzêdna Y, dziesi¹tki i jednoœci
+Czyli:
+wspó³rzêdna x = CH*100 + CL
+wspó³rzêdna y = DH*100 + DL
+
+B³êdy:
+Brak
+
+Przyk³ad:
+Jeœli kursor znajduje siê na pozycji
+x = 1047 i y = 512 to po wywo³aniu
+tej funkcji do rejestrów zostan¹
+wpisane nastêpuj¹ce wartoœci:
+CH = 10
+CL = 47
+DH = 5
+DL = 12 
